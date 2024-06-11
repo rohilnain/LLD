@@ -1,0 +1,15 @@
+
+Factory Design Pattern:
+whenever we want to create objects of classes which are implementing the same
+interface lets say shape and classes are rectangle,square, circle or any other
+we create a factory which encapsulates classes code and give object os these classes
+wherever it requires (it encapsulates, simplifies usuage and also extensible)
+factory has-a relationship with Shape (as it returns it)
+
+The Abstract Factory Design Pattern:
+ It is used to provide an interface for creating families of related or
+ ]dependent objects without specifying their concrete classes.
+ Let's apply this pattern to create two groups of car manufacturers:
+ a luxury car group (Mercedes and Audi) and an economy car group
+ (Maruti and Hyundai).
+ Simply, it applies whenever we have grouping of objects

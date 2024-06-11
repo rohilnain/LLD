@@ -1,0 +1,72 @@
+Think of decorator deisgn pattern whenever there is a case of increment addition
+of things on top of something.
+For eg: base pizza has some price, base cheeseburst pizza has some additional price
+ base cheeseburst veggie pizza has some more additional price, so like that.
+ other eg: When we place on swiggy instamart, order value can be increased
+    by adding more and more ....
+
+ So for these cases think of Decorator Design Pattern
+
+ Problem Description
+ Imagine you are developing a system for customizing pizzas. You have a base
+ pizza, and customers can add various toppings like cheeseburst, veggies, and
+ jalapenos.
+
+ Without Decorator Pattern
+ Problems:
+ Class Explosion: For each combination of toppings, you would need a new class.
+ For example:
+ BasePizza
+ CheeseburstPizza
+ VeggiePizza
+ JalapenoPizza
+ CheeseburstVeggiePizza
+ CheeseburstJalapenoPizza
+ VeggieJalapenoPizza
+ CheeseburstVeggieJalapenoPizza
+
+ As you can see, the number of classes grows exponentially with the number of
+ toppings.
+
+ Code Duplication: Each class would need to implement similar methods for
+ calculating cost and description, leading to code duplication.
+
+ Inflexibility: Adding a new type of topping would require creating many
+ new classes and potentially modifying existing classes, making the system difficult to maintain and extend.
+
+ With Decorator Pattern
+ Solution:
+ Using the Decorator Pattern, you can create a flexible and scalable solution
+ for adding toppings to pizzas.
+
+ Components:
+
+ Component Interface: Pizza
+ Defines the methods getDescription() and getCost().
+
+ Concrete Component: BasePizza
+ Implements the Pizza interface.
+ Represents the basic pizza without any toppings.
+
+ Decorator: PizzaDecorator (v.imp)
+ An abstract class that implements the Pizza interface and contains a reference to a Pizza object.
+ Delegates the getDescription() and getCost() methods to the Pizza object.
+ it has both object (has-a relationship) and also implements that (is-a relationship)
+ of pizza interface;
+
+ Concrete Decorators:
+
+ Cheeseburst: Extends PizzaDecorator and adds the cost and description of cheeseburst.
+ Veggie: Extends PizzaDecorator and adds the cost and description of veggies.
+ Jalapeno: Extends PizzaDecorator and adds the cost and description of jalapenos.
+
+ How It Works:
+ Create a BasePizza object.
+ Wrap the BasePizza object with a Cheeseburst decorator.
+ Wrap the Cheeseburst object with a Veggie decorator.
+ Wrap the Veggie object with a Jalapeno decorator.
+
+ something like this
+ Pizza pizza = new Jalapeno(new Veggie(new Cheeseburst(new BasePizza())));
+ System.out.println(pizza.getDescription());
+ System.out.println(pizza.getCost());

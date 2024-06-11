@@ -1,0 +1,52 @@
+Theory:
+The Observer Design Pattern defines a one-to-many dependency between objects, so that when
+one object (the subject) changes state, all its dependents (observers) are notified and
+updated automatically. This pattern is mainly used to implement distributed event-handling
+systems.
+
+Key Concepts:
+
+observables: The object that holds the state and can have many observers.
+Observers: Objects that need to be informed about changes in the observable.
+
+Examples:
+
+1. Notification Systems:
+Email Alerts: When a new email arrives, the email application notifies all configured
+alert systems (desktop notifications, mobile alerts, etc.).
+Social Media Notifications: When someone interacts with a post, the platform
+notifies the user and others involved.
+
+2. Publishing/Subscription Systems:
+News Websites: Subscribers receive updates when a new article is published.
+RSS Feeds: Users get updates when new content is posted in subscribed feeds.
+
+3. Real-Time Data Streaming:
+Stock Market Applications: Stock price changes are broadcasted to all subscribed
+clients in real time.
+Weather Updates: Weather stations send updates to various devices and applications.
+
+3. Game Development:
+Event Handling: When game events (like scoring) occur, multiple components (UI, sounds, etc.) are updated.
+Achievement Systems: Notifications are sent when players achieve milestones.
+
+4.E-commerce Websites.
+ Let's say if a product comes back from out of stock we want to notify all the people
+ who have clicked on "notify me". (We are going to implement this in our code)
+
+The Observer Design Pattern is a powerful way to ensure that various parts of a system are kept in sync with changes and events, promoting modularity and flexibility in software design.
+
+
+Following are the steps used for observer observable design pattern
+1. create Observer Interface with update method
+2. Implement the Observer Interface in the User Class
+3. Define the Observable interface with add,remove and notify observer method
+4.Implement the Observable Interface in (handles notification ) [here :IphoneInStockNotification]
+  it also has set number method which trigger notify method and that
+  trigger user update method (See code)
+
+now you can also have many notification class like geyserNotification on top of that
+or many other (take int noOfIphones as int numberItem change this)
+
+
+
