@@ -2,7 +2,7 @@ package SOLIDPrinciple;
 
 //Interfaces Segmented Principle
 public class IntefacesSegmentedPrincipleDemo {
-    //Interfaces should be such,that client should not implement unnecessary functions they do not need
+    //4. Interfaces should be such,that client should not implement unnecessary functions they do not need
 
     interface RestaurantEmployee{
         void washDishes();

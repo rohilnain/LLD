@@ -2,7 +2,7 @@ package SOLIDPrinciple;
 
 //Dependency Inversion Principle
 public class DependencyInversionPrincipleDemo {
-    //Class should depend on interfaces rather than concrete classes
+    //5. Class should depend on interfaces rather than concrete classes
 
     //lets see problem
 
